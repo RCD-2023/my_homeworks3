@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./scripts/server.js"></script>
+    <script src="./scripts/app.js" defer></script>
+    <title>Fetch | Promises</title>
+  </head>
+  <body>
+    <h1>Tech Twitter</h1>
+    <button id="open-new-post-form">New post</button>
+    <form id="new-post-form" method="POST">
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" id="title" required name="title" />
+      </div>
+      <div class="form-control">
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          cols="50"
+          rows="5"
+          required
+          name="content"
+        ></textarea>
+      </div>
+      <button id="submit">Add post</button>
+    </form>
+    <h2>Recent posts</h2>
+    <main id="posts"></main>
+  </body>
+</html>
+

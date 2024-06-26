@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.like,
+.dislike,
+.remove,
+.edit,
+.show-more {
+  user-select: none;
+  cursor: pointer;
+}
+
+.form-control {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#new-post-form {
+  display: none;
+}
+
+#open-new-post-form {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+}
+.show-details {
+  display: none;
+  margin-top: 10px;
+}

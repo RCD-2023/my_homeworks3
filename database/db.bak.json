@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "userId": 2,
+      "title": "TOP 6 Mistakes in RxJS code",
+      "content": "From this video, you will learn the TOP 6 mistakes developers make when writing RxJS code. Watch this video until the end, and you will see how to make your RxJS code more reliable, clear, and performant. If you find this video useful, please share it with your colleagues and friends. Enjoy!",
+      "likes": 100
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "title": "Reactive Forms in Angular - Dynamic Validation",
+      "content": "Reactive Forms in Angular, I will show you how you can apply and remove validators to certain form controls dynamically, depending on the values from other form controls in your Angular Form. I will show you how to do that using ReactiveForms. You will see which pitfalls you might encounter while implementing this feature and, of course, I will show you how you can overcome them.",
+      "likes": 200
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "title": "Ex-Google TechLead quits tech",
+      "content": "Channel Update: Ex-Google TechLead quits tech. Ace your coding interviews with ex-Google/ex-Facebook training.",
+      "likes": 54
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "The angular forms course is gold quality. I subscribed last year and helped me a lot in my development",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "text": "Dmytro, could you please make a video about Angular Material theming for v18? The documentation is confusing.",
+      "postId": 1
+    },
+    {
+      "id": 3,
+      "text": "Tech has officially ended for the 57th time this year.",
+      "postId": 2
+    }
+  ],
+  "users": [
+    {
+      "name": "Decoded Frontend",
+      "id": 1
+    },
+    {
+      "name": "TechLead",
+      "id": 2
+    }
+  ]
+}
