@@ -1,0 +1,13 @@
+@channel 
+Salut! Va las aici materialul lucrat astazi la clasa.
+ Retineti pasii:
+npm install  pentru a se instala dependentele mentionate in package.json
+npm run server pentru a porni serverul bazei de date locale
+Open with live server din fisierul de index.html
+In setarile de VS Code sa verificati regula de ignore de .json files pentru Live Server.
+Ce aveti de facut pana data viitoare? TODO-urile lasate ca comments in fisierele de scripts.
+Spor!
+
+// TODO: de implementat dislike
+// TODO: la click pe lupa sa vedem imediat sub titlu: utilizatorul si continutul post-ului
+
