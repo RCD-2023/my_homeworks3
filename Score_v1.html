@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kpn score</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
+        background: aqua;
+      }
+      h3 {
+        font-weight: bold;
+        margin-bottom: 2px;
+      }
+      .form-container{
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      p{
+        margin-bottom: 2px;
+      }
+      input{
+        margin-bottom: 2px;
+      }
+      
+      .btn {
+        border-radius: 5px; /* Razele colțurilor pentru rotunjire */
+        border: none; /* Eliminarea bordurii */
+        cursor: pointer; /* Stil cursor */
+        margin-bottom: 0px;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .raspuns{
+        margin-top: 2px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Scor orientativ infectie Kpn: </h3>
+    <section class="form-container">
+    <form  id="scor-ponderat" action="">
+      <p>Selecteaza genul:</p>
+      <input type="radio" id="male" name="gender" value="2" />
+      <label for="male">Male</label><br />
+      <input type="radio" id="female" name="gender" value="0" />
+      <label for="female">Female</label><br/>
+      
+      <p>Selecteaza tipul de infectie urinara: </p>
+      <input type="radio" id="low" name="uti-type" value="0" />
+      <label for="low">Low</label><br/>
+      <input type="radio" id="high" name="uti-type" value="2" />
+      <label for="high">High</label><br/>
+     
+      <p>Selecteaza daca este admis in TI:</p>
+      <input type="radio" id="ti-no" name="ti-adm" value="0" />
+      <label for="ti-no">No</label><br/>
+      <input type="radio" id="ti-yes" name="ti-adm" value="1" />
+      <label for="ti-yes">Yes</label><br/>
+
+      <p>Selecteaza daca este portaj anterior de kpn: </p>
+      <input type="radio" id="kpn-no" name="kpn" value="0" />
+      <label for="kpn-no">No</label><br/>
+      <input type="radio" id="kpn-yes" name="kpn" value="1" />
+      <label for="kpn-yes">Yes</label><br/>
+
+      <p>Selecteaza daca au existat manevre invazive recente: </p>
+      <input type="radio" id="manevre-no" name="manevre" value="0" />
+      <label for="manevre-no">No</label><br/>
+      <input type="radio" id="manevre-yes" name="manevre" value="2" />
+      <label for="manevre-yes">Yes</label><br/>
+
+      <p>Selecteaza la cate zile de la internare s-a pozitivat proba: </p>
+      <input type="radio" id="pozSub5" name="pozitivareKpn" value="0" />
+      <label for="pozSub5">&lt; 5</label><br/>
+      <input type="radio" id="pozPeste5" name="pozitivareKpn" value="2" />
+      <label for="pozPeste5">&ge; 5</label><br/>
+
+      <p>Selecteaza categoria rezultatului eGrf: </p>
+      <input type="radio" id="egrf-mic" name="eGRF" value="2" />
+      <label for="egrf-mic">&lt; 30</label><br/>
+      <input type="radio" id="egrf-mare" name="eGRF" value="0" />
+      <label for="egrf-mare">&ge; 30</label><br/>
+      <br/>
+      <button class="btn" type="button" onClick=calculScor()>Calculeaza</button>
+    </form>
+  </section>
+
+    <div class="raspuns">
+      <p id="scor-result"></p>
+    </div>
+    <script>
+      
+      function calculScor(){
+        const UI ={
+          gender: document.querySelector('input[name="gender"]:checked'),
+          utiType :document.querySelector('input[name="uti-type"]:checked'),
+          tiAdm : document.querySelector('input[name="ti-adm"]:checked'),
+          kpn : document.querySelector('input[name="kpn"]:checked'),
+          manevre : document.querySelector('input[name="manevre"]:checked'),
+          zilePozKpn : document.querySelector('input[name="pozitivareKpn"]:checked'),
+          eGRF : document.querySelector('input[name="eGRF"]:checked'),
+
+        }
+        let errorMessage='';
+        
+        if (!UI.gender || !UI.utiType || !UI.tiAdm || !UI.kpn || !UI.manevre || !UI.zilePozKpn || !UI.eGRF) {
+    // console.error("Toate câmpurile trebuie completate.");
+       document.getElementById("scor-result").textContent = "Toate câmpurile trebuie completate.";
+    return;
+    
+  }
+        
+        const sum = parseInt(UI.gender.value) + parseInt(UI.utiType.value) +parseInt(UI.tiAdm.value) + parseInt(UI.kpn.value) + parseInt(UI.manevre.value) + parseInt(UI.zilePozKpn.value) + parseInt(UI.eGRF.value);
+        // console.log(sum);
+
+         // Afișarea rezultatului în elementul cu id-ul "scor-result
+         document.getElementById('scor-result').textContent = "Rezultat scor = " + sum;
+      }
+      
+   </script>
+  </body>
+</html>
